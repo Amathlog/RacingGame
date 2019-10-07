@@ -1,5 +1,7 @@
-CMakeFiles/
-Makefile
-CMakeCache.txt
-cmake_install.cmake
+**/CMakeFiles/
+**/Makefile
+**/CMakeCache.txt
+**/cmake_install.cmake
 RacingGame
+**/*.a
+external/box2d/Box2D/Box2DConfig.cmake
