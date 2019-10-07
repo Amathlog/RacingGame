@@ -25,15 +25,29 @@ endif (WIN32)
 add_subdirectory(external/box2d)
 include_directories(external/box2d)
 
-# Create the executable
-add_executable(RacingGame main.cpp)
+# Include main project
+file(GLOB RACINGGAME_SRC
+    "src/include/*.h"
+    "src/*.cpp"
+)
+
+include_directories("src/include")
+
+add_executable(RacingGame ${RACINGGAME_SRC})
+
+# Add tests
+add_executable(TestSDL "tests/test_sdl.cpp")
+add_executable(TestBox2D "tests/test_box2d.cpp")
 
 # Link the libraries
 if (WIN32)
     target_link_libraries(RacingGame ${SDL2_LIBRARY_TEMP} Box2D)
+    target_link_libraries(TestSDL ${SDL2_LIBRARY_TEMP})
 else (WIN32)
     target_link_libraries(RacingGame ${SDL2_LIBRARIES} Box2D)
+    target_link_libraries(RacingGame ${SDL2_LIBRARIES})
 endif (WIN32)
+target_link_libraries(TestBox2D Box2D)
 
 # Add a copy command for the dll for Windows
 if (WIN32)
