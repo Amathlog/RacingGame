@@ -1,7 +1,7 @@
 #include "SDL.h" 
 #include "Box2D/Box2D.h"
 
-constexpr bool testBox2D = true;
+constexpr bool testBox2D = false;
 
 int main(int argc, char *argv[])
 {
