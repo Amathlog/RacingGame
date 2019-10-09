@@ -45,7 +45,7 @@ if (WIN32)
     target_link_libraries(TestSDL ${SDL2_LIBRARY_TEMP})
 else (WIN32)
     target_link_libraries(RacingGame ${SDL2_LIBRARIES} Box2D)
-    target_link_libraries(RacingGame ${SDL2_LIBRARIES})
+    target_link_libraries(TestSDL ${SDL2_LIBRARIES})
 endif (WIN32)
 target_link_libraries(TestBox2D Box2D)
 
