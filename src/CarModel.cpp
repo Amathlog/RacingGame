@@ -36,7 +36,7 @@ namespace Constants
         Point2D(-20.0f, 20.0f)
     };
 
-    constexpr std::array<Point2D, 8> HULL_POLY2{
+    constexpr std::array<Point2D, 8> HULL_POLY3{
         Point2D(25.0f, 20.0f),
         Point2D(50.0f, -10.0f),
         Point2D(50.0f, -40.0f),
