@@ -17,6 +17,8 @@ public:
     void Initialize(unsigned int height, unsigned int width);
     void Close();
 
+    void SetFramerate(unsigned int fps);
+
     ~Renderer()
     {
         Close();
@@ -27,5 +29,9 @@ private:
 
     SDL_Window* m_window = nullptr;
     SDL_Renderer* m_renderer = nullptr;
-    std::unordered_map<unsigned int, const Renderable*> m_renderablesMap;
+    using MapIDToRenderable = std::unordered_map<unsigned int, const Renderable*>;
+    MapIDToRenderable m_renderablesMap;
+    float m_fixedDeltaTime = -1.0f;
+    float m_lastUpdate = 0.0f;
+    float m_currentTime = 0.0f;
 };
